@@ -183,14 +183,28 @@ width: 100%;
 
  .delete-producto {
   cursor: pointer;
+  border-bottom-style: dotted;
+border-bottom: thick green;
   
  }
 
  .restar {
   cursor: pointer;
+ width: 30px;
+ background-color: #263143;
+ font-size: 17px;
+ border-radius: 12px;
+ height: 20px;
+ text-align: auto;
  }
  .sumar {
   cursor: pointer;
+  width: 30px;
+  background-color: #263143;
+  font-size: 17px;
+  border-radius: 12px;
+  height: 20px;
+  text-align: auto;
  }
 
  .cantidad-carrito {

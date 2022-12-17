@@ -29,8 +29,8 @@ const cartView = () => {
       <p>${product.precio}$</p>
       <p>Cantidad: ${product.cantidad}</p>
       <p>Total:${product.cantidad * product.precio} </p>
-      <span class ="restar">-</span>
-      <span class ="sumar">+</span>
+      <button class ="restar">-</button>
+      <button class ="sumar">+</button>
       <span class = "delete-producto">❌</span>
       
     `;
@@ -72,20 +72,30 @@ const cartView = () => {
    productoDelete.className = "button-vaciar"
    productoDelete.innerHTML = `Vaciar carrito`
    modeloContainer.append(productoDelete)
-   productoDelete.addEventListener("click", vaciarCarrito)
+   productoDelete.addEventListener("click", ()=>{
+    vaciarCarrito()
+    sweetAlertVaciar()
+    modeloContainer.style.display = "none"
+
+   })
    
-   let comprar = document.createElement("button")
+
+    let comprar = document.createElement("button")
    comprar.className = "button-comprar"
    comprar.innerHTML = `Comprar`;
    modeloContainer.append(comprar)
-   comprar.addEventListener("click", sweetAlert)
-  
-
+   comprar.addEventListener("click", ()=>{
+    sweetAlert()
+    vaciarCarrito()
+    modeloContainer.style.display = "none"
    }
+   )}
+
+   
+ 
+
+   
        
-  
-
-
 verCarrito.addEventListener("click", cartView)
 
 
@@ -114,12 +124,9 @@ carritoContador()
   carrito = [];
   eliminarProducto()
    localStorage.removeItem(eliminarProducto)
-   
+   sweetAlertVaciar()
   
-   
 }
 
 
 
-
-  
